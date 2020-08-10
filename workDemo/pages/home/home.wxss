@@ -1,0 +1,22 @@
+.banner-box{
+  width: 750rpx;
+  height: 440rpx;
+}
+.banner-item {
+  display: block;
+  width: 120rpx;
+  /* background-color: red; */
+  float: left;
+  margin:15rpx;
+  text-align: center;
+}
+
+.swiper-image {
+  width: 100rpx;
+  height: 100rpx;
+  
+}
+
+.swiper-p {
+  font-size: 24rpx;
+}

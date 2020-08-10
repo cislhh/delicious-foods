@@ -1,0 +1,21 @@
+.title{
+  width: 100px;
+  margin: 50px auto;
+  text-align: center;
+  display: block;
+}
+.login-box{
+  margin-bottom: 200rpx;
+}
+.login-box .in-password,
+.login-box .in-username{
+  border: 1px solid #000;
+  padding-left: 1em;
+  width: 600rpx;
+}
+.login-box .in-password{
+  margin: 20rpx 0;
+}
+.login-box .in-logbtn{
+  width: 400rpx;
+}

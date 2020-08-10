@@ -1,0 +1,6 @@
+/* pages/fenlei/fenlei.wxss */.title{
+  width: 100px;
+  margin: 50px auto;
+  text-align: center;
+  display: block;
+}

@@ -1,0 +1,14 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+	<text class="title">用户名登陆</text>
+	<view class="login-box">
+		<input placeholder="请输入用户名" class="in-username" maxlength="{{maxlength}}" value="{{username}}" bindblur="getName" data-user="username"></input>
+		<input placeholder="请输入密码" password="true" class="in-password" maxlength="{{maxlength}}" bindblur="getPass" data-pass="password"></input>
+		<button type="default" plain="true" class="in-logbtn" type="primary" bindtap="in_logbtn" data-user-name="{{username}}">登录</button>
+	</view>
+	<view hidden="{{hidden}}">
+		<view wx:if="{{try==true}}">登录成功</view>
+		<view wx:if="{{try==false}}">登录失败，请检查帐号或者密码是否正确</view>
+	</view>
+
+</view>

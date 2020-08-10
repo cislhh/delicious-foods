@@ -1,0 +1,20 @@
+<!--pages/home/home.wxml-->
+
+<view class="bannerBox">
+
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" class="banner-box">
+		<block wx:for="{{bannerItem}}" wx:for-item="bItem" wx:for-index="bPage" wx:key="*this">
+			<swiper-item>
+				<block wx:for="{{bItem}}" wx:for-item="bIcon" wx:key="*this">
+				<view class="banner-item">
+					<image class="swiper-image" src="{{bIcon.imgUrl}}"></image>
+					<text class="swiper-p">{{bIcon.typeName}}</text>
+				</view>
+				</block>
+			</swiper-item>
+		</block>
+	</swiper>
+
+
+	<view>{{iconButtonArr}}</view>
+</view>
