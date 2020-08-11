@@ -4,6 +4,16 @@
   text-align: center;
   display: block;
 }
+.logt-box .active{
+  color: orange;
+}
+
+.logt-box{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50rpx;
+}
+
 .login-box{
   margin-bottom: 200rpx;
 }
@@ -18,4 +28,6 @@
 }
 .login-box .in-logbtn{
   width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
 }

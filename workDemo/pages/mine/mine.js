@@ -11,15 +11,19 @@ Page({
     maxlength: 18,
     username: "",
     password: "",
+    usermail: "",
     try: false,
     hidden: true,
+    mod: "namemod",
     userInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -77,31 +81,25 @@ Page({
       })
     }, 2000)
   },
-
   //登录提交用户数据
   in_logbtn: function (e) {
     this.data.userInfo.userName = this.data.username;
     this.data.userInfo.passWord = this.data.password;
+    this.data.userInfo.userMail = this.data.usermail;
     //验证数据是否匹配
     tryUser.map(item => {
-      if (item.userName == this.data.userInfo.userName && item.passWord == this.data.userInfo.passWord) {
+      if (item.userName == this.data.userInfo.userName && item.passWord == this.data.userInfo.passWord || item.userMail == this.data.userInfo.userMail && item.passWord == this.data.userInfo.passWord) {
         console.log("成功登陆")
         this.setData({
           try: true,
           hidden: false
         })
-        // this.timeOut()
-        // console.log(this.timeOut())
-        // clearTimeout(timer)
       } else {
         console.log("登录失败，请检查帐号或者密码是否正确")
         this.setData({
           try: false,
           hidden: false
         })
-        // this.timeOut()
-        // console.log(this.timeOut())
-        // clearTimeout(timer)
       }
     })
     this.timeOut()
@@ -115,11 +113,28 @@ Page({
       username
     })
   },
+  //获取用户邮箱
+  getMail: function (e) {
+    let usermail = e.detail.value
+    this.setData({
+      usermail
+    })
+  },
   //请输入密码
   getPass: function (e) {
     let password = e.detail.value
     this.setData({
       password
+    })
+  },
+  //切换当前登录模式,顺便清除填写的内容
+  logModel: function (e) {
+    let model = e.currentTarget.dataset.mod;
+    this.setData({
+      mod: model,
+      username: "",
+      password: "",
+      usermail: "",
     })
   }
 })

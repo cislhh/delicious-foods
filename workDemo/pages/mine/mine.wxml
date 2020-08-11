@@ -1,9 +1,22 @@
 <!--pages/mine/mine.wxml-->
 <view class="container">
-	<text class="title">用户名登陆</text>
+	<view class="logt-box">
+		<text class="title-name {{mod=='namemod'?'active':''}}" bindtap="logModel" data-mod="namemod">用户名登陆</text>
+		<view>丨</view>
+		<text class="title-mail {{mod=='mailmod'?'active':''}}" bindtap="logModel" data-mod="mailmod">邮箱登录</text>
+	</view>
+
 	<view class="login-box">
-		<input placeholder="请输入用户名" class="in-username" maxlength="{{maxlength}}" value="{{username}}" bindblur="getName" data-user="username"></input>
-		<input placeholder="请输入密码" password="true" class="in-password" maxlength="{{maxlength}}" bindblur="getPass" data-pass="password"></input>
+
+		<block wx:if="{{mod=='namemod'}}">
+			<input placeholder="请输入用户名" class="in-username" maxlength="{{maxlength}}" value="{{username}}" bindblur="getName" data-user="username"></input>
+		</block>
+		<block wx:if="{{mod=='mailmod'}}">
+			<input placeholder="请输入邮箱" class="in-username" maxlength="{{maxlength}}" value="{{usermail}}" bindblur="getMail" data-user="usermail"></input>
+		</block>
+
+		<input placeholder="请输入密码" password="true" class="in-password" maxlength="{{maxlength}}" bindblur="getPass" data-pass="password" value="{{password}}"></input>
+
 		<button type="default" plain="true" class="in-logbtn" type="primary" bindtap="in_logbtn" data-user-name="{{username}}">登录</button>
 	</view>
 	<view hidden="{{hidden}}">
