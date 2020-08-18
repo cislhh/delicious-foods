@@ -1,0 +1,34 @@
+<view class='adminPerson'>
+	<!-- 菜谱分类列表 (菜谱分类列表) -->
+	<view class='cpfllb'>
+		<block>
+			<view>
+				<text class="txt">儿童菜谱</text>
+				<text class="btn" style="background:#f1613c">删除</text>
+				<text class="btn" style="background:#4578ff">修改</text>
+			</view>
+		</block>
+		<!-- 添加按钮 -->
+		<view class="fladd" bindtap="_showAdd">
+			<image src="/static/personal/add.png"></image>
+		</view>
+	</view>
+
+	<!--    页面 （菜谱添加分类） -->
+	<view class='cptjfl' wx:if="{{addBtn}}">
+		<mp-cell prop="mobile" ext-class=" weui-cell_vcode">
+			<!-- 输入菜谱分类 -->
+			<input class="weui-input" placeholder="输入菜谱分类" bindinput="_inputAdd"/>
+			<view slot="footer" class="weui-vcode-btn" bindtap="_addType">添加</view>
+		</mp-cell>
+	</view>
+	<!-- 修改页面  （菜谱修改分类）-->
+	<view class='cpxgfl' wx:if="{{updateBtn}}">
+		<mp-cell prop="mobile" ext-class=" weui-cell_vcode">
+			<!-- 输入菜谱分类 -->
+			<input value="" class="weui-input" placeholder="输入菜谱分类" />
+			<view slot="footer" class="weui-vcode-btn">修改</view>
+		</mp-cell>
+	</view>
+
+</view>

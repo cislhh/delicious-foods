@@ -1,6 +1,7 @@
 // pages/home/home.js
 // let bannerList = require("../../utils/bannerList");
 let bannerItem = require("../../utils/bannerList");
+import {products,login}from "../../utils/api.js"
 Page({
 
   /**
@@ -17,12 +18,30 @@ Page({
     // bannerList,
     bannerItem
   },
-
+_products:async function(){
+  let res = await products({
+    name:"furry",
+    age:"123"
+  })
+  console.log(res)
+},
+_login:async function(){
+ let res = await login({
+   name:"furry",
+   pwd:"456"
+ })
+ console.log(res)
+},
+_order:function () {
+  wx.navigateTo({
+    url: '../order/order',
+  })
+  console.log(1)
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(bannerItem)
   },
 
   /**

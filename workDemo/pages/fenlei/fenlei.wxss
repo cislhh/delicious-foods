@@ -1,6 +1,29 @@
-/* pages/fenlei/fenlei.wxss */.title{
-  width: 100px;
-  margin: 50px auto;
+.fl-container{
+  display: flex;
+}
+.scroll-box{
+  height: 1200rpx;
+}
+.scroll-box .cate-l{
+  width: 200rpx;
+  height: 1200rpx;
+}
+.scroll-box .cate-l view{
+  height: 80rpx;
+  line-height: 80rpx;
   text-align: center;
-  display: block;
+  border: 1px solid #000;
+  color: #fff;
+  background-color: red;
+}
+.fl-box .cate-r{
+  width:550rpx;
+    height:1200rpx;
+}
+.fl-box view{
+  text-align: center;
+  height: 500rpx;
+  line-height: 500rpx;
+  width: 548rpx;
+  border-bottom: 1px solid blue;
 }

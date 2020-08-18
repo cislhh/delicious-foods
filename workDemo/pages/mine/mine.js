@@ -15,14 +15,72 @@ Page({
     try: false,
     hidden: true,
     mod: "namemod",
-    userInfo: {}
+    userInfo: false,
+    islogin: false
   },
+  autoLogin: function () {
+    wx.login({
+      success: (res) => {
+        wx.request({
+          url: 'http://localhost:3000/login',
+          data: {
+            code: res.code
+          },
+          success:  (result)=>{
+            wx.setStorageSync('token', result.data.token);
+            this.setData({
+              islogin:true
+            })
+          }
+        })
 
+      }
+    })
+  },
+  _checkLoginStatus: function () {
+    wx.checkSession({
+      success: (res) => {
+        this.setData({
+          islogin: true
+        })
+      },
+      fail: (error) => {
+        this.autoLogin()
+      }
+    })
+  },
+  _getUserInfo:function(e) {
+      console.log(e)
+      wx.setStorageSync('userInfo', e.detail.userInfo);
+      this.setData({
+        userInfo:e.detail.userInfo
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._checkLoginStatus();
+    wx.getSetting({
+      success:(res)=>{
+        // console.log(res)
+        //判断用户是否授权
+        if(res.authSetting["scope.userInfo"]){
+          wx.getUserInfo({
+            success:(e)=>{
+              console.log(e)
+              // wx.setStorageSync('userInfo', e.detail.userInfo);
+              this.setData({
+                userInfo:e.userInfo
+              })
+            }
+          })
+        }else{
 
+        }
+      }
+    })
+    console.log(this.data.maxlength)
   },
 
   /**

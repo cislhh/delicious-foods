@@ -15,6 +15,8 @@
 		</block>
 	</swiper>
 
-
-	<view>{{iconButtonArr}}</view>
+	<button class="btn" type="primary" bindtap="_products">获取商品信息</button>
+	<button class="btn" type="primary" bindtap="_login">登录</button>
+	<button class="btn" type="primary" bindtap="_order">搜索</button>
+	
 </view>

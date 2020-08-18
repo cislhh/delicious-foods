@@ -31,7 +31,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.12.0",
 	"appid": "wxc1cd3ff731f291db",
 	"projectname": "workDemo",
 	"debugOptions": {
@@ -69,6 +69,21 @@
 					"id": -1,
 					"name": "登录",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/fenlei/fenlei",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "",
 					"scene": null
 				}
 			]

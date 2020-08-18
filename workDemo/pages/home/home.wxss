@@ -20,3 +20,7 @@
 .swiper-p {
   font-size: 24rpx;
 }
+
+.btn{
+  margin-bottom: 20rpx;
+}

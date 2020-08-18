@@ -17,7 +17,14 @@
 
 		<input placeholder="请输入密码" password="true" class="in-password" maxlength="{{maxlength}}" bindblur="getPass" data-pass="password" value="{{password}}"></input>
 
+		
 		<button type="default" plain="true" class="in-logbtn" type="primary" bindtap="in_logbtn" data-user-name="{{username}}">登录</button>
+		<block wx:if="{{!userInfo}}"> 
+			<button class="btn" type="primary" open-type="getUserInfo" bindgetuserinfo="_getUserInfo">一键登录</button>
+		</block>
+		<block wx:else> 
+			<image src="{{userInfo.avatarUrl}}"></image>
+		</block>
 	</view>
 	<view hidden="{{hidden}}">
 		<view wx:if="{{try==true}}">登录成功</view>

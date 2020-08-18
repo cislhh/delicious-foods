@@ -5,9 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cate:""
+    // "cate":"cate1"
   },
-
+  scrolltoView:function(e){
+    let cate = e.currentTarget.dataset.cate
+    this.setData({
+      cate
+    })
+    console.log(e.currentTarget.dataset.cate)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

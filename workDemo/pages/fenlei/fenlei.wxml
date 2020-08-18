@@ -1,2 +1,42 @@
-<!--pages/fenlei/fenlei.wxml-->
-<text class="title">这是分类</text>
+<view class="fl-container">
+	<view class="scroll-box">
+		<scroll-view class="cate-l" scroll-y="true">
+			<view data-cate="cate1" bindtap="scrolltoView" id="cate1">1</view>
+			<view data-cate="cate2" bindtap="scrolltoView" id="cate2">2</view>
+			<view data-cate="cate3" bindtap="scrolltoView" id="cate3">3</view>
+			<view data-cate="cate4" bindtap="scrolltoView" id="cate4">1</view>
+			<view>2</view>
+			<view>3</view>
+			<view>1</view>
+			<view>2</view>
+			<view>3</view>
+			<view>1</view>
+			<view>2</view>
+			<view>3</view>
+			<view>1</view>
+			<view>2</view>
+			<view>3</view>
+			<view>1</view>
+			<view>2</view>
+			<view>3</view>
+		</scroll-view>
+	</view>
+	<view class="fl-box">
+		<scroll-view class="cate-r" scroll-y="true" scroll-into-view="{{cate}}">
+			<view id="cate1">
+				<view>分类1</view>
+			</view>
+			<view id="cate2">
+				<view>分类2</view>
+			</view>
+			<view id="cate3">
+				<view>分类3</view>
+			</view>
+      <view id="cate4">
+				<view>分类4</view>
+			</view>
+		</scroll-view>
+
+	</view>
+
+</view>

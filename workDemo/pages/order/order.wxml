@@ -1,0 +1,39 @@
+<view>
+	<mp-navigation-bar background="#ff0000" color="white" back="{{false}}">
+		<view slot="left">
+			<view class="back">
+				<text bindtap="_goback">返回</text>|
+				<text>首页</text>
+			</view>
+		</view>
+		<view slot="center">
+			<mp-icon icon="search" color="white"></mp-icon>
+			订单查询
+		</view>
+	</mp-navigation-bar>
+	<mp-searchbar></mp-searchbar>
+	<mp-tabbar list="{{list}}" bindchange="_switchTab"></mp-tabbar>
+	<mp-cells ext-class="my-cells" title="订单的基本信息" footer="请仔细核对">
+		<mp-cell link="{{true}}" bindtap="_showAction">
+			<image slot="icon" src="/pages/image/icon/dfk.png"></image>
+			<view>待付款</view>
+			<view slot="footer" >查看</view>
+		</mp-cell>
+		<mp-cell link="{{true}}" bindtap="_showAction">
+			<image slot="icon" src="/pages/image/icon/dfh.png"></image>
+			<view>待发货</view>
+			<view slot="footer" >查看</view>
+		</mp-cell>
+		<mp-cell link="{{true}}" bindtap="_showAction">
+			<image slot="icon" src="/pages/image/icon/dpj.png"></image>
+			<view>待评价</view>
+			<view slot="footer" >查看</view>
+		</mp-cell>
+		<mp-cell link="{{true}}" bindtap="_showAction">
+			<image slot="icon" src="/pages/image/icon/tk.png"></image>
+			<view>更多</view>
+			<view slot="footer" >查看</view>
+		</mp-cell>
+	</mp-cells>
+	<mp-actionSheet show="{{show}}" title="请选择页面" actions="{{actions}}"></mp-actionSheet>
+</view>

@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/fenlei/fenlei",
     "pages/shopcar/shopcar",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -39,5 +40,9 @@
     }]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents":{
+    "my-test1":"/components/test1/index"
+  }
+  
 }

@@ -28,6 +28,5 @@
 }
 .login-box .in-logbtn{
   width: 400rpx;
-  height: 80rpx;
-  line-height: 80rpx;
+  margin-bottom: 20rpx;
 }
