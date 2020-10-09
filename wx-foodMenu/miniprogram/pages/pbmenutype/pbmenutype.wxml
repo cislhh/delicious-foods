@@ -1,11 +1,11 @@
 <view class='adminPerson'>
 	<!-- 菜谱分类列表 (菜谱分类列表) -->
 	<view class='cpfllb'>
-		<block>
+		<block wx:for="{{types}}" wx:key="_id">
 			<view>
-				<text class="txt">儿童菜谱</text>
-				<text class="btn" style="background:#f1613c">删除</text>
-				<text class="btn" style="background:#4578ff">修改</text>
+				<text class="txt">{{item.typeName}}</text>
+				<text class="btn" style="background:#f1613c" data-index = "{{index}}" bindtap="_deleteType">删除</text>
+				<text class="btn" style="background:#4578ff" data-index = "{{index}}"  bindtap="_showUpdate">修改</text>
 			</view>
 		</block>
 		<!-- 添加按钮 -->
@@ -26,8 +26,8 @@
 	<view class='cpxgfl' wx:if="{{updateBtn}}">
 		<mp-cell prop="mobile" ext-class=" weui-cell_vcode">
 			<!-- 输入菜谱分类 -->
-			<input value="" class="weui-input" placeholder="输入菜谱分类" />
-			<view slot="footer" class="weui-vcode-btn">修改</view>
+			<input value="{{typeName}}" bindinput="_inputUpdate" class="weui-input" placeholder="{{typeName}}" />
+			<view slot="footer" class="weui-vcode-btn" bindtap="_updateType">修改</view>
 		</mp-cell>
 	</view>
 

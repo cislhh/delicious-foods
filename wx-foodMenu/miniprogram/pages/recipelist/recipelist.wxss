@@ -83,6 +83,6 @@
 }
 
 .xingxing image {
-  width: 22px;
+  width: 228rpx;
   height: 22px;
 }

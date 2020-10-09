@@ -2,7 +2,10 @@
 //表
 let tables = {
     user:"w_user",
-    type:"w_type"
+    type:"w_type",
+    menu:"w_menu",
+    userType:"w_user_type",
+    follow:"w_follow"
 }
 let admin = "oShlM5OPeheAjPlWI6H3lB31Htpw";
 export default{

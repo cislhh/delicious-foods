@@ -3,9 +3,9 @@
   <view class="search">
     <view class="search_view">
       <icon type="search"></icon>
-      <input></input>
+      <input bindinput="_inputKeyword" placeholder="菜谱搜索"></input>
     </view>
-    <text>搜索</text>
+    <text bindtap="_search">搜索</text>
   </view>
   <!-- 热门搜索  9个即可 -->
   <view class="hotsearch">
@@ -14,8 +14,7 @@
     </view>
     <view class="hotsearch_list">
       <!-- 列表 -->
-      <view>萝卜青菜</view>
-      <view>萝卜青菜</view>
+      <view wx:for="{{hotSearch}}" wx:key="_id" data-id="{{item._id}}" data-menu-name="{{item.menu_name}}" bindtap="_goDetail">{{item.menu_name}}</view>
     </view>
   </view>
   <!-- 近期搜索  存入缓存 -->
@@ -25,11 +24,10 @@
     </view>
     <view class="jqsearch_list">
       <!-- 列表 -->
-      <block>
-        <view>萝卜青菜</view>
-        <view>萝卜青菜</view>
+      <block wx:for="{{lastSearch}}" wx:key="*this">
+        <view data-keyword="{{item}}" bindtap="_goMenuList">{{item}}</view>
       </block>
-      <block>
+      <block wx:if="{{lastSearch.length==0}}">
         <view>
           暂无记录
         </view>

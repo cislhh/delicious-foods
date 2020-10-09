@@ -1,13 +1,13 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
 	<view class="page__bd">
 		<!-- 发布菜单 -->
-		<form bindsubmit="fbcd">
+		<form bindsubmit="_publishMenu">
 			<!-- 需要菜单名称 -->
 			<view class="weui-cells__title">菜单名称</view>
 			<view class="weui-cells weui-cells_after-title">
 				<view class="weui-cell">
 					<view class="weui-cell__bd">
-						<input class="weui-input" placeholder="请输入菜单名称" />
+						<input name="menu_name" class="weui-input" placeholder="请输入菜单名称" />
 					</view>
 				</view>
 			</view>
@@ -16,11 +16,11 @@
 			<view class="weui-cells weui-cells_after-title">
 				<view class="weui-cell">
 					<view class="weui-cell__bd">
-						<radio-group name="recipeTypeid">
+						<radio-group name="type_id">
 							<!-- 循环遍历菜谱分类 -->
-							<block>
+							<block wx:for="{{types}}" wx:key="_id">
               <!-- 给当前分类加了一个默认值，随便去了index为0的，第一个 -->
-								<radio value="儿童菜谱" style="font-size:13.5px">儿童菜谱</radio>
+								<radio checked="{{index==0?true:false}}" value="{{item._id}}" style="font-size:13.5px">{{item.typeName}}</radio>
 							</block>
 						</radio-group>
 					</view>
@@ -35,7 +35,10 @@
 							<mp-cell>
 								<mp-uploader 
                     max-count="5" 
-                    title="图片选择" 
+                    title="图片选择"
+					files="{{filesList}}"
+					bindselect="_selectImg"
+					binddelete="_deleteImg"
                     ></mp-uploader>
 							</mp-cell>
 						</mp-cells>
@@ -47,7 +50,7 @@
 			<view class="weui-cells weui-cells_after-title">
 				<view class="weui-cell">
 					<view class="weui-cell__bd">
-						<textarea class="weui-textarea" name="recipesMake" placeholder-style="font-size:26rpx" placeholder="请输入菜品做法" style="height: 6.6em" />
+						<textarea class="weui-textarea" name="menu_detail" placeholder-style="font-size:26rpx" placeholder="请输入菜品做法" style="height: 6.6em" />
 						<view class="weui-textarea-counter">不限字数</view>
           </view>
         </view>
